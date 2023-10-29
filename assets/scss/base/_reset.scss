@@ -1,0 +1,70 @@
+/* 초기화 */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  color: #222222;
+  background: #2e3032;
+  letter-spacing: -0.025em;
+}
+
+fieldset {
+  border: 0;
+}
+
+/* 세팅 */
+body {
+  /* 기본적인 국문의 폰트패밀리 적용 */
+  font-family: var(--font-kr);
+  color: #222222;
+  letter-spacing: -0.025em;
+}
