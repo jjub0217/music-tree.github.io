@@ -32,11 +32,11 @@ const body = document.querySelector('body')
 
 
 const navItem = document.querySelectorAll('.gnb .nav-item')
-navItem.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    item.classList.add('active');
-    gnb.classList.add('active')
-  })
+  navItem.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.classList.add('active');
+      gnb.classList.add('active')
+    })
 
   item.addEventListener('mouseleave', () => {
     item.classList.remove('active');
