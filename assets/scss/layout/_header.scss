@@ -16,105 +16,103 @@
       height: 63px;
     }
 
-    .logo {
-      height: 100%;
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
       width: 100%;
+      height: 100%;
 
       @include tablet {
-        align-self: center;
         width: auto;
       }
 
-      a {
-        display: block;
+      .logo {
+        width: 102px;
+
+        @include tablet {
+          width: 45px;
+        }
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+
+    .btn {
+      display: none;
+
+      @include tablet {
         display: flex;
+        align-items: center;
         justify-content: center;
-        gap: 40px;
-        height: 100%;
-
-        .logo-box {
-          width: 102px;
-
-          @include tablet {
-            width: 45px;
-          }
-
-          &.box1 {
-            background: url("../images/logo1.png") no-repeat;
-            background-position: center;
-            background-size: contain;
-          }
-
-          &.box2 {
-            background: url("../images/logo2.png") no-repeat;
-            background-position: center;
-            background-size: contain;
-          }
-        }
       }
-    }
 
-    .menu-btn {
-      display: none;
-
-      @include tablet {
+      &::after {
+        content: "";
         display: block;
-        order: -1;
+        width: 30px;
+        height: 30px;
+        background-position: center;
+      }
 
+      &.menu-btn {
         &::after {
-          content: "";
-          display: block;
-          width: 30px;
-          height: 30px;
           background: url("../images/menu-btn.png") no-repeat;
-          background-position: center;
-          background-size: contain;
+          background-size: cover;
+        }
+
+        @include tablet {
+          order: -1;
         }
       }
-    }
 
-    .login {
-      display: none;
-
-      @include tablet {
-        display: block;
-
-        a {
-          &::before {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 30px;
-            background: url("../images/tel.png") no-repeat;
-            background-position: center;
-            background-size: contain;
-          }
+      &.tel-btn {
+        &::after {
+          background: url("../images/tel.png") no-repeat;
+          background-size: cover;
         }
       }
     }
   }
-
 }
 
 .gnb {
-  // height: 30%;
   height: 66px;
   border-top: 1px solid #4a4c4f;
   border-bottom: 1px solid #1c1e20;
   background: #2e3032;
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0;
+    transition: height .4s;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  @include tablet {
+    display: none;
+  }
+
   .inner {
     height: 100%;
 
-    .nav-list {
-      display: flex;
-      justify-content: space-between;
-      height: 100%;
-      width: 100%;
+    .nav {
+      &-list {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+      }
 
-      .nav-item {
-        // flex: 1;
+      &-item {
         display: flex;
         justify-content: center;
         font-family: var(--font-en);
@@ -135,16 +133,17 @@
       }
     }
 
-    .sub-list {
-      position: absolute;
-      // header 전체 높이만큼 top 0 에서 내려와라.
-      top: 100%;
-      height: 0;
-      width: 100%;
-      overflow: hidden;
-      transition: height padding .4s;
+    .sub {
+      &-list {
+        position: absolute;
+        top: 100%;
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height padding .4s;
+      }
 
-      .sub-item {
+      &-item {
         padding: 10px 0;
         color: #fff;
         font-size: 16px;
@@ -159,21 +158,6 @@
         }
       }
     }
-  }
-
-  @include tablet {
-    display: none;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 0;
-    transition: height .4s;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
   }
 
   &.active {
@@ -235,79 +219,78 @@
       background-size: contain;
     }
 
+    .nav {
+      &-list {
+        display: flex;
+        flex-direction: column;
+      }
 
-    .nav-list {
-      display: flex;
-      flex-direction: column;
-
-      .nav-item {
+      &-item {
         font-size: 17px;
         line-height: 50px;
         border-bottom: 1px solid #444649;
+      }
 
-        .nav-link {
-          display: block;
-          height: 100%;
-          padding: 0 25px;
+      &-link {
+        display: block;
+        height: 100%;
+        padding: 0 25px;
 
-          &.on {
-            background: #ef4035;
-
-            &.hasSubMenu {
-              &::after {
-                transform: rotate(180deg);
-              }
-            }
-          }
+        &.on {
+          background: #ef4035;
 
           &.hasSubMenu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
             &::after {
-              content: "";
-              display: block;
-              width: 10px;
-              height: 10px;
-              background: url("../images/icon_drop_up.png") no-repeat;
-              background-position: center;
-              background-size: contain;
+              transform: rotate(180deg);
             }
+          }
+        }
 
+        &.hasSubMenu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: url("../images/icon_drop_up.png") no-repeat;
+            background-position: center;
+            background-size: contain;
           }
         }
       }
     }
 
-    .sub-list {
-      display: none;
+    .sub {
+      &-list {
+        display: none;
 
-      &.active {
-        display: block;
-
-        background: #000;
-
-        .sub-item {
-          color: #fff;
-          font-size: 16px;
-          font-weight: 200;
-          line-height: 30px;
-
-          &:not(:last-child) {
-            border-bottom: 0.5px solid #444649;
-          }
-
-          a {
-            display: flex;
-            align-items: center;
-            padding: 5px 45px;
-          }
-
+        &.active {
+          display: block;
+          background: #000;
         }
       }
 
+      &-item {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 30px;
 
+        &:not(:last-child) {
+          border-bottom: 0.5px solid #444649;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          padding: 5px 45px;
+        }
+
+      }
     }
   }
 }

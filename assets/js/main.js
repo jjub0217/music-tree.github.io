@@ -23,6 +23,7 @@ const gnb = document.querySelector('.gnb')
 const navALinks = document.querySelectorAll('.gnb .nav')
 const subLists = document.querySelectorAll('.gnb .sub-list')
 const gnbBefore = document.querySelector('.gnb .span')
+// 이건가?
 const moNavALinks = document.querySelectorAll('.mo-gnb .nav')
 const menuBtn = document.querySelector('.menu-btn')
 const menuCloseBtn = document.querySelector('.menu-close')
@@ -49,6 +50,12 @@ menuBtn.onclick = (e) => {
   mobileGnb.classList.add('isAct')
   dimmed.style.display = 'block'
   body.classList.add('scroll-hide')
+  menuCloseBtn.ariaPressed = "false"
+  if (e.target.ariaExpanded  === 'false') {
+    e.target.ariaExpanded = 'true' 
+  } else {
+    e.target.ariaExpanded = 'false' 
+  }
 }
 
 
@@ -85,6 +92,12 @@ menuCloseBtn.onclick = (e) => {
   mobileGnb.classList.remove('isAct')
   dimmed.style.display = 'none';
   body.classList.remove('scroll-hide')
+  menuBtn.ariaExpanded = 'false'
+  if (e.target.ariaPressed  === 'false') {
+    e.target.ariaPressed = 'true' 
+  } else {
+    e.target.ariaPressed = 'false' 
+  }
 }
 
 dimmed.onclick = ()=>{
