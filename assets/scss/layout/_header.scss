@@ -229,49 +229,62 @@
         font-size: 17px;
         line-height: 50px;
         border-bottom: 1px solid #444649;
+
+        &.hasSubMenu {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          &.on {
+            background: #ef4035;
+
+            .nav-link {
+              &::after {
+                transform: rotate(180deg);
+              }
+            }
+
+            .sub-list {
+              background: #000;
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          .nav-link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &::after {
+              content: "";
+              display: block;
+              width: 10px;
+              height: 10px;
+              background: url("../images/icon_drop_up.png") no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+          }
+        }
       }
 
       &-link {
         display: block;
         height: 100%;
         padding: 0 25px;
-
-        &.on {
-          background: #ef4035;
-
-          &.hasSubMenu {
-            &::after {
-              transform: rotate(180deg);
-            }
-          }
-        }
-
-        &.hasSubMenu {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          &::after {
-            content: "";
-            display: block;
-            width: 10px;
-            height: 10px;
-            background: url("../images/icon_drop_up.png") no-repeat;
-            background-position: center;
-            background-size: contain;
-          }
-        }
       }
     }
 
     .sub {
       &-list {
-        display: none;
+        // display: none;
+        height: 0;
+        list-style: none;
+        overflow: hidden;
+        transition: height ease-out 0.3s;
 
-        &.active {
-          display: block;
-          background: #000;
-        }
       }
 
       &-item {

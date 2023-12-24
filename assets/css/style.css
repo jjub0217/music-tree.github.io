@@ -343,23 +343,29 @@ body {
   line-height: 50px;
   border-bottom: 1px solid #444649;
 }
-.mo-gnb.isAct .nav-link {
-  display: block;
-  height: 100%;
-  padding: 0 25px;
-}
-.mo-gnb.isAct .nav-link.on {
-  background: #ef4035;
-}
-.mo-gnb.isAct .nav-link.on.hasSubMenu::after {
-  transform: rotate(180deg);
-}
-.mo-gnb.isAct .nav-link.hasSubMenu {
+.mo-gnb.isAct .nav-item.hasSubMenu {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
-.mo-gnb.isAct .nav-link.hasSubMenu::after {
+.mo-gnb.isAct .nav-item.hasSubMenu.on {
+  background: #ef4035;
+}
+.mo-gnb.isAct .nav-item.hasSubMenu.on .nav-link::after {
+  transform: rotate(180deg);
+}
+.mo-gnb.isAct .nav-item.hasSubMenu.on .sub-list {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+.mo-gnb.isAct .nav-item.hasSubMenu .nav-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mo-gnb.isAct .nav-item.hasSubMenu .nav-link::after {
   content: "";
   display: block;
   width: 10px;
@@ -368,12 +374,16 @@ body {
   background-position: center;
   background-size: contain;
 }
-.mo-gnb.isAct .sub-list {
-  display: none;
-}
-.mo-gnb.isAct .sub-list.active {
+.mo-gnb.isAct .nav-link {
   display: block;
-  background: #000;
+  height: 100%;
+  padding: 0 25px;
+}
+.mo-gnb.isAct .sub-list {
+  height: 0;
+  list-style: none;
+  overflow: hidden;
+  transition: height ease-out 0.3s;
 }
 .mo-gnb.isAct .sub-item {
   color: #fff;
