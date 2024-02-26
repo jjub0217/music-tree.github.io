@@ -150,7 +150,6 @@
         font-weight: 200;
         line-height: 30px;
         width: 100%;
-        padding: 0 30px;
 
         a {
           display: block;
@@ -162,12 +161,12 @@
 
   &.active {
     &::before {
-      height: 430px;
+      min-height: 700px;
     }
 
     .sub-list {
       padding-top: 15px;
-      height: 430px;
+      height: fit-content;
     }
   }
 }
