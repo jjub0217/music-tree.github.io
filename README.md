@@ -16,14 +16,14 @@
 
 ## 프로젝트 웹표준(W3C의 Markup Validation Service)
 결과 : 0개 <br>
-<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/ea6a0235-a320-4d16-b63f-bf6bb9623a0d" width=500> <br>
+<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/ea6a0235-a320-4d16-b63f-bf6bb9623a0d" width=800> <br>
 
 
 ## 프로젝트 웹접근성
 - Open-WAX 결과 : error 0<br>
-<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/2a1c31e7-4be5-42cc-9d53-bd1ccbab14e9" width=500> <br>
+<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/2a1c31e7-4be5-42cc-9d53-bd1ccbab14e9" width=800> <br>
 - WAVE 결과: error 0<br>
-<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/ffb245d7-2bab-4bd5-826f-e4e504108665" width=500>
+<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/ffb245d7-2bab-4bd5-826f-e4e504108665" width=800>
 
 
 ## 기술 스택
