@@ -313,12 +313,11 @@
         flex-wrap: wrap;
       }
 
+      @media (min-width: 479px) and (max-width: 578px) {
+        padding: 0 70px;
+      }
       @include mobile {
         margin-top: 40px;
-      }
-
-      @media screen and (min-width: 578px) {
-        padding: 0 70px;
       }
     }
 
