@@ -21,6 +21,11 @@ $mobile: 768px;
     @content;
   }
 }
+@mixin noneMobile {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}
 
 @mixin ellipse($line: 1) {
   overflow: hidden;
