@@ -1,36 +1,36 @@
-// 1230 안에서 잘 나오면 오케이
-// 전역으로 적용시킨것들은 1229 이상으로 다 적용시키는 것이다. 
-
-// 시안에 따라 다름
-// 1025 ~ 1281
 $desktop: 1280px;
 
-// 768 ~ 1280
 $tablet: 1000px;
 
-// 320 ~ 767
 $mobile: 768px;
 
 @mixin desktop {
-
-  // 1229 이하를 꾸미는거다. 
-  @media screen and (max-width: $desktop ) {
+  @media screen and (max-width: $desktop) {
     @content;
   }
 }
 
 @mixin tablet {
-
-  // 1280 이하를 꾸미는거다. 
-  @media screen and (max-width: $tablet ) {
+  @media screen and (max-width: $tablet) {
     @content;
   }
 }
 
 @mixin mobile {
-
-  // 767 이하를 꾸미는거다. 
-  @media screen and (max-width: $mobile ) {
+  @media screen and (max-width: $mobile) {
     @content;
+  }
+}
+
+@mixin ellipse($line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if ($line > 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  } @else {
+    white-space: nowrap;
   }
 }

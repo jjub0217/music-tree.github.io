@@ -1,6 +1,5 @@
 /* 초기화 */
 
-
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +8,12 @@
   box-sizing: border-box;
 }
 
-
 *,
 :after,
 :before {
   box-sizing: border-box;
   flex-shrink: 0;
 }
-
 
 html,
 body {
@@ -31,6 +28,10 @@ svg {
   display: block;
   max-width: 100%;
 }
+img {
+  width: 100%;
+  object-fit: cover;
+}
 
 button {
   background: none;
@@ -39,12 +40,12 @@ button {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
 }
 
 ul {
@@ -61,9 +62,7 @@ fieldset {
   border: 0;
 }
 
-/* 세팅 */
 body {
-  /* 기본적인 국문의 폰트패밀리 적용 */
   font-family: var(--font-kr);
   color: #222222;
   letter-spacing: -0.025em;
