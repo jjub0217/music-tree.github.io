@@ -832,6 +832,11 @@ body {
     margin-top: 40px;
   }
 }
+@media screen and (max-width: 578px) {
+  .section_promotion .sns_list .section_promotion .sns_list {
+    padding: 0 70px;
+  }
+}
 @media screen and (min-width: 768px) {
   .section_promotion .sns_item:not(.section_promotion .sns_item.link) {
     display: flex;
