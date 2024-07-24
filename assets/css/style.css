@@ -833,7 +833,7 @@ body {
   }
 }
 @media screen and (max-width: 578px) {
-  .section_promotion .sns_list .section_promotion .sns_list {
+  .section_promotion .sns_list {
     padding: 0 70px;
   }
 }
