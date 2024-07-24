@@ -317,7 +317,7 @@
         margin-top: 40px;
       }
 
-      @media screen and (max-width: 578px) {
+      @media screen and (min-width: 578px) {
         padding: 0 70px;
       }
     }
